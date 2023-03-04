@@ -2,7 +2,10 @@ import fs from 'fs'
 import url from 'url'
 import http from 'http'
 const PORT = 3000
+const express = require("express")
+const app = express()
 
+app.use(express.static('public'))
 const Server = http.createServer((req, res) => {
     const query = url.parse(req.url,true)
     const filename = query.pathname.substring(1)
