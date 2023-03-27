@@ -14,9 +14,9 @@ app.get('/',(req,res)=>{
         lastname: 'gomes'
     }
     const auth = false 
-    const aprovado  = false
+    const aprovado  = true
 
-    res.render('home', {user:user, aprovado ,auth})
+    res.render('home', {user:user, aprovado,auth})
 })
 app.get("/dashboard", (req,res)=>{
     const user = {

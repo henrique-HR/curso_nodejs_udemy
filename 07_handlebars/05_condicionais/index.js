@@ -26,4 +26,4 @@ app.get("/dashboard", (req,res)=>{
     }
     res.render("dashboard", {user:user})
 })
-app.listen(4000 ,console.log('tudo ok '))
+app.listen(3000 ,console.log('tudo ok '))

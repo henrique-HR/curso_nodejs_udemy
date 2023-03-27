@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+div{
+    background-color: rgb(251, 238, 221);
+    max-width: 500px;
+    height:auto;
+    margin: auto;
+    
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px rgba(46, 44, 42, 0.126);
+}
