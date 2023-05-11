@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro de ususario</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <ul>
+    <li><a href="/">voltar</a></li>
+</ul>
+    <h1>adicione o usuario</h1>
+    <form action="/user/create" method="POST" class="form">
+    
+    <div class="form-control">
+        <label for="name">nome</label>
+        <input type="text" name="name" placeholder="nome do usuario">
+    <div/>
+
+    <div class="form-control">
+        <label for="occupation">ocupação</label>
+        <input type="text" name="occupation" placeholder="digite a profissão" >
+    </div>
+    <div class="form-control form-checkbox">  <input type="checkbox" name="newsletter" checked  >
+    <label for="newsletter">enviar promoções?</label>
+       
+    </div>
+    <input type="submit" value="cadastrar">
+    
+    </form>
+</body>
+</html>

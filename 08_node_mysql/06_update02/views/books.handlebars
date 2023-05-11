@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="table">
+        <h1>livros disponiveis</h1>
+        <table>
+            <tr><th>nº</th>
+                <th>livro</th>
+                <th>pag</th>
+                <th>editar
+                </th>
+                </tr>
+            {{#each info}}
+                
+               <tr> 
+                <td>{{this.id}} </td>
+                  
+                  <td><a href="/book/{{this.id}}">{{this.title}}</a></td>  <td>{{this.pagesqt}}</td>
+                
+                <td><a href="/books/edit/{{this.id}}"> &#x1F4DD;</a></td>
+                
+               </tr>
+        
+        
+            {{/each}}
+        </table>
+    </div>
+    <div class="back-home"><a href="/">voltar</a></div>
+   
+</body>
+</html>

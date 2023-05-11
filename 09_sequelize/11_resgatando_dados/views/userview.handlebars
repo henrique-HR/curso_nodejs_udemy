@@ -1,0 +1,19 @@
+<ul>
+    <li>
+        <a href="/">voltar</a>
+    </li>
+</ul>
+<h1> {{user.name}} </h1>
+<h2>profissão</h2>
+<hr>
+<p> {{user.occupation}} </p>
+<br>
+<h1>endereços</h1>
+<hr>
+{{#each user.addresses}}
+
+    <p>cidade: {{this.city}} / 
+               rua: {{this.street}} / 
+                nº : {{this.number}}
+                </p>
+{{/each}}

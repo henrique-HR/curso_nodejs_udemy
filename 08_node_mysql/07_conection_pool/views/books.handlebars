@@ -1,0 +1,22 @@
+
+    <div class="table">
+        <h1>livros disponiveis</h1>
+        
+        <div class="inf">
+            <span>nº</span><span class="title">livro</span><span class="pag">pag</span><span>editar</span>
+        </div>
+        {{#each book}} 
+            <div class="books">
+                     
+            <span>{{this.id}} </span>
+        
+            <span class="titl"><a href="/book/{{this.id}}">{{this.title}}</a></span>
+            <span> {{this.pagesqt}}</span>
+            <a href="/books/edit/{{this.id}}"> &#x1F4DD;</a>
+            </div>
+        
+        {{/each}}
+     
+    </div>
+    <div class="back-home"><a href="/">voltar</a></div>
+   

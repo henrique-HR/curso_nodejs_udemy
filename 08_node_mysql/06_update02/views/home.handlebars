@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio do banco de dados </title>
+
+</head>
+<body>
+    <h1>cadastre seu livro  </h1>
+    
+    <form class="form" action="/book/insertbooks" method="POST">
+    <div class="form-control">
+        <label for="title"> titulo:</label>
+        <input type="text" name="title" placeholder="digite o nome do livro" minlength="5">
+    </div>
+    <div class="form-control">
+        <label for="pagesqt">quantidades de paginas </label>
+        <input type="number" name="pagesqt" placeholder="digite a quantidade de paginas ">
+
+        <input type="submit" value="cadastrar">
+    </div> 
+    <div class="ver"><a href="/books">ver livros</a></div>
+    </form>
+</body>
+</html>

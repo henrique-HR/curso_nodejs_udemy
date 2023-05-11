@@ -6,13 +6,13 @@ const app = express()
 app.engine('handlebars',exphbs.engine())
 app.set('view engine','handlebars')
 app.use( express.urlencoded({
-    extended:true ,
+    extended:true , 
 }))
 app.use(express.static('public'))
 app.use(express.json())
 
-app.get('/',(req,res)=>{
-    res.render('home')
+app.get('/',(req,res)=>{  
+    res.render('home')  
 }) 
 app.get('/books',(req,res)=>{
     const query = "SELECT * FROM  books"
@@ -56,16 +56,29 @@ app.get('/books/deletar/:id',(req,res)=>{
     const id = req.params.id
     const query = `DELETE FROM  books where id = ${id}`
     conn.query(query,function(err,data){
-        if(err){
+        if(err){ 
             throw err ;
         }
-        const book = data[0]
+        const book = data[0]  
         res.render('deletar',{book})
         console.log(book)
      
-    }) 
+    })  
     
 
+})
+app.get('/books/edit/:id',(req,res)=>{
+
+    const id = req.params.id
+    const sql = `SELECT * FROM books where id = ${id}`
+    conn.query(sql, function(err,data){
+        if(err){
+            throw err;
+
+        }
+        const book = data[0]
+        res.render('editbook',{book})
+    }) 
 })
 
 
@@ -82,7 +95,7 @@ conn.connect(function(err){
     if(err){
         throw err;
     }
-    app.listen(3000,console.log('banco conectado http://localhost:3000'))
+    app.listen(3000,console.log('banco conectado em http://localhost:3000'))
 })
 
 

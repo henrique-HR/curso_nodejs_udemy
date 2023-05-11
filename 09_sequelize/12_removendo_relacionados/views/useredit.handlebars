@@ -1,0 +1,67 @@
+
+    <ul>
+    <li><a href="/">voltar</a></li>
+    </ul>
+   
+<fieldset class="form">
+        <form action="/user/edit" method="POST" class="form">
+            <input type="hidden" name="id" value="{{user.id}}">
+            <h1>editando:{{user.name}}</h1>
+            <div class="form-control">
+                <label for="name">nome</label>
+                <input type="text" name="name" value="{{user.name}}"  placeholder="nome do usuario">
+            </div>
+            <div class="form-control">
+                <label for="occupation">ocupação</label>
+                <input type="text" name="occupation" value="{{user.occupation}}" placeholder="digite a profissão" >
+            </div>
+            <div class="form-control form-checkbox">
+                {{#if user.newsletter}}
+                    <input type="checkbox" name="newsletter"  checked>
+                {{else}}
+                <input type="checkbox" name="newsletter"  >
+                {{/if}}
+                <label for="newsletter">enviar promoções?</label>
+                <input type="submit" value="editar">
+            </div>
+        </form>
+       
+        <div class="container-address">
+            <h2>endereço</h2>
+            <form action="/address/create" method="post">
+                <input type="hidden" name="UserId" value="{{user.id}}">
+                <div class="form-control">
+                    <label for="street">rua</label>
+                    <input type="text" name="street" placeholder="digite o nome da rua">
+                     <label for="city">cidade</label>
+                    <input type="text" name="city" placeholder="cidade">
+                     <label for="number">numero</label>
+                    <input type="text" name="number" placeholder="digite o numero">
+                    <input type="submit" value="enviar">
+            </form>
+        
+            <div class="address-list">
+                <h2>lista de endereços</h2>
+                {{#each user.addresses}}
+                    <div>
+                        #{{this.id}}
+                        -{{this.street}}
+                        -{{this.number}}
+                        -{{this.city}}-
+
+                        <form action="/address/delete/" method="post">
+                             <input type="hidden" name="UserId" value="{{this.UserId}}">
+                            
+                            <input type="hidden"  name="id"value="{{this.id}}">
+
+                            <input type="submit" value="deletar">
+
+                        
+                        </form>    
+                    </div>  
+                {{/each}}
+             </div>
+        </div>
+    </fieldset>
+
+    

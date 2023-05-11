@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sequelize</title>
+
+</head>
+<body>
+    <h1>usuarios cadastrados </h1>
+    
+
+    <div class="container">
+        {{#each users}}
+
+            <div class="item">
+                <h2>{{this.name}}</h2>
+                <p>{{this.occupation}}</p>
+                <div class="actions">
+                    <a href="/users/{{this.id}}">ver</a>
+                    <form action="/users/delet/{{this.id}}" method="post">
+                    <input type="submit" value="excluir" class="delete-btn">
+                    </form>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    
+</body>
+</html>
