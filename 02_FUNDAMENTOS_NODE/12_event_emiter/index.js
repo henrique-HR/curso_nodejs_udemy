@@ -11,4 +11,4 @@ function emit(){
     eventEmitter.emit('start')
 }
 
-setTimeout (emit,5000)
+setTimeout (emit,5000) 
