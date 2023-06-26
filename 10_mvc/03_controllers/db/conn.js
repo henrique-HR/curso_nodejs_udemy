@@ -6,7 +6,6 @@ const sequelize = new Sequelize('nodemvc','root','',{
 
 try {
     sequelize.authenticate()
-    console.log('conectado ao banco !')
   
 } catch (error) {
     console.log(error)
